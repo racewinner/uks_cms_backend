@@ -1,0 +1,26 @@
+.splash {
+    display: none !important;
+    justify-content: center;
+    align-items: center;
+}
+
+body.loading .splash {
+    display: flex !important;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.splash img {
+    width: 64px;
+    height: 64px;
+}
+
+.rdrInputRange {
+    padding: 5px !important;
+}
+.rdrDefinedRangesWrapper {
+    width: 160px !important;
+}

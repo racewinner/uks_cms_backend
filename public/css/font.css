@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "QuincyCF";
+    src: url("/font/QuincyCF-MediumItalic.ttf")
+    format("truetype");
+}
+
+@font-face {
+    font-family: "Crashnumberinggothic";
+    src: url("/font/Crashnumberinggothic.ttf")
+    format("truetype");
+}
+
+@font-face {
+    font-family: "TimerFont";
+    src: url("/font/digital-7.ttf")
+    format("truetype");
+}
