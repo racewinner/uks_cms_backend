@@ -1,0 +1,372 @@
+ERROR - 2025-08-22 14:09:39 --> mysqli_sql_exception: Column 'cms_id' in where clause is ambiguous in E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*)...', 0)
+#1 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+#6 E:\56. moh har\united_wholesale\02.dev\cms\backend\app\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+#7 E:\56. moh har\united_wholesale\02.dev\cms\backend\app\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+#8 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+#9 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+#10 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\56. moh har\united_wholesale\02.dev\cms\backend\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-08-22 14:09:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 2 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 5 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-22 14:09:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 4 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 7 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-22 14:09:39 --> [Caused by] mysqli_sql_exception: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 5 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 8 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-08-22 14:09:39 --> mysqli_sql_exception: Column 'cms_id' in where clause is ambiguous in E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*)...', 0)
+#1 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+#6 E:\56. moh har\united_wholesale\02.dev\cms\backend\app\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+#7 E:\56. moh har\united_wholesale\02.dev\cms\backend\app\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+#8 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+#9 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+#10 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\56. moh har\united_wholesale\02.dev\cms\backend\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-08-22 14:09:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 2 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 5 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-22 14:09:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 4 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 7 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-22 14:09:39 --> [Caused by] mysqli_sql_exception: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 5 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 8 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-08-22 14:10:03 --> mysqli_sql_exception: Column 'cms_id' in where clause is ambiguous in E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*)...', 0)
+#1 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+#6 E:\56. moh har\united_wholesale\02.dev\cms\backend\app\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+#7 E:\56. moh har\united_wholesale\02.dev\cms\backend\app\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+#8 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+#9 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+#10 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\56. moh har\united_wholesale\02.dev\cms\backend\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-08-22 14:10:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 2 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 5 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-22 14:10:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 4 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 7 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-22 14:10:03 --> [Caused by] mysqli_sql_exception: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 5 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 8 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-08-22 14:10:03 --> mysqli_sql_exception: Column 'cms_id' in where clause is ambiguous in E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*)...', 0)
+#1 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+#6 E:\56. moh har\united_wholesale\02.dev\cms\backend\app\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+#7 E:\56. moh har\united_wholesale\02.dev\cms\backend\app\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+#8 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+#9 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+#10 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\56. moh har\united_wholesale\02.dev\cms\backend\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-08-22 14:10:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 2 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 5 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-22 14:10:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 4 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 7 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-22 14:10:03 --> [Caused by] mysqli_sql_exception: Column 'cms_id' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = \'221\'
+AND `epos_cms_items`.`deleted` != 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `epos_cms_items`
+LEFT JOIN `epos_managers` ON `epos_cms_items`.`editor`=`epos_managers`.`manager_id`
+LEFT JOIN `epos_cms_brands` ON `epos_cms_items`.`id`=`epos_cms_brands`.`cms_item_id`
+WHERE `cms_id` = :cms_id:
+AND `epos_cms_items`.`deleted` != :epos_cms_items.deleted:', [...], false)
+ 5 SYSTEMPATH\Model.php(624): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1239): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Traits\ControllerTrait.php(43): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 8 APPPATH\Controllers\CmsItemController.php(63): App\Controllers\CmsItemController->dataTable(Object(App\Models\CmsItem))
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->index()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

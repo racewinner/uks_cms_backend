@@ -1,0 +1,130 @@
+ERROR - 2025-08-24 01:34:14 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '), `active` = 1, `editor` = '5000', `deleted` = '0', `updated_at` = '2025-08-...' at line 1 in E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `epos_cm...', 0)
+#1 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `epos_cm...')
+#2 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `epos_cm...')
+#3 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `epos_cm...', Array, false)
+#4 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+#5 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\BaseModel.php(987): CodeIgniter\Model->doUpdate(Array, Array)
+#6 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Model.php(807): CodeIgniter\BaseModel->update(Array, Array)
+#7 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\BaseModel.php(711): CodeIgniter\Model->update('219', Array)
+#8 E:\56. moh har\united_wholesale\02.dev\cms\backend\app\Controllers\CmsController.php(364): CodeIgniter\BaseModel->save(Array)
+#9 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\CmsController->save('219')
+#10 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsController))
+#11 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\56. moh har\united_wholesale\02.dev\cms\backend\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2025-08-24 01:34:14 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '), `active` = 1, `editor` = '5000', `deleted` = '0', `updated_at` = '2025-08-...' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `epos_cms` SET `internal_name` = :internal_name:, `type` = :type:, `start_date` = :start_date:, `end_date` = :end_date:, `branches` = :branches:, `organization_id` = :organization_id:, `price_list` = :price_list:, `page_pos` = :page_pos:, `ribbon` = :ribbon:, `template_id` = :template_id:, `data` = :data:, `active` = :active:, `editor` = :editor:, `deleted` = :deleted:, `updated_at` = :updated_at:
+WHERE `epos_cms`.`id` IN :epos_cms.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 5 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('219', [...])
+ 6 APPPATH\Controllers\CmsController.php(364): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsController->save('219')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-24 01:34:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '), `active` = 1, `editor` = '5000', `deleted` = '0', `updated_at` = '2025-08-...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `epos_cms` SET `internal_name` = \'111111\', `type` = \'products_carousel\', `start_date` = \'2025-07-31T15:00:00.000Z\', `end_date` = \'2025-08-31T14:59:59.000Z\', `branches` = \'1,2,3,4,5\', `organization_id` = \'8\', `price_list` = \'001,005,007,008,009,010,011,012,999\', `page_pos` = \'2\', `ribbon` = \'{\\"bg_color\\":\\"#f00\\",\\"txt_color\\":\\"#fff\\",\\"align\\":\\"left\\",\\"content\\":\\"Hello, morning. how are you?\\"}\', `template_id` = \'4\', `data` = (), `active` = 1, `editor` = \'5000\', `deleted` = \'0\', `updated_at` = \'2025-08-24 01:34:14\'
+WHERE `epos_cms`.`id` IN (\'219\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `epos_cms` SET `internal_name` = \'111111\', `type` = \'products_carousel\', `start_date` = \'2025-07-31T15:00:00.000Z\', `end_date` = \'2025-08-31T14:59:59.000Z\', `branches` = \'1,2,3,4,5\', `organization_id` = \'8\', `price_list` = \'001,005,007,008,009,010,011,012,999\', `page_pos` = \'2\', `ribbon` = \'{\\"bg_color\\":\\"#f00\\",\\"txt_color\\":\\"#fff\\",\\"align\\":\\"left\\",\\"content\\":\\"Hello, morning. how are you?\\"}\', `template_id` = \'4\', `data` = (), `active` = 1, `editor` = \'5000\', `deleted` = \'0\', `updated_at` = \'2025-08-24 01:34:14\'
+WHERE `epos_cms`.`id` IN (\'219\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `epos_cms` SET `internal_name` = :internal_name:, `type` = :type:, `start_date` = :start_date:, `end_date` = :end_date:, `branches` = :branches:, `organization_id` = :organization_id:, `price_list` = :price_list:, `page_pos` = :page_pos:, `ribbon` = :ribbon:, `template_id` = :template_id:, `data` = :data:, `active` = :active:, `editor` = :editor:, `deleted` = :deleted:, `updated_at` = :updated_at:
+WHERE `epos_cms`.`id` IN :epos_cms.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 7 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('219', [...])
+ 8 APPPATH\Controllers\CmsController.php(364): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsController->save('219')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-24 01:34:14 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '), `active` = 1, `editor` = '5000', `deleted` = '0', `updated_at` = '2025-08-...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `epos_cms` SET `internal_name` = \'111111\', `type` = \'products_carousel\', `start_date` = \'2025-07-31T15:00:00.000Z\', `end_date` = \'2025-08-31T14:59:59.000Z\', `branches` = \'1,2,3,4,5\', `organization_id` = \'8\', `price_list` = \'001,005,007,008,009,010,011,012,999\', `page_pos` = \'2\', `ribbon` = \'{\\"bg_color\\":\\"#f00\\",\\"txt_color\\":\\"#fff\\",\\"align\\":\\"left\\",\\"content\\":\\"Hello, morning. how are you?\\"}\', `template_id` = \'4\', `data` = (), `active` = 1, `editor` = \'5000\', `deleted` = \'0\', `updated_at` = \'2025-08-24 01:34:14\'
+WHERE `epos_cms`.`id` IN (\'219\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `epos_cms` SET `internal_name` = \'111111\', `type` = \'products_carousel\', `start_date` = \'2025-07-31T15:00:00.000Z\', `end_date` = \'2025-08-31T14:59:59.000Z\', `branches` = \'1,2,3,4,5\', `organization_id` = \'8\', `price_list` = \'001,005,007,008,009,010,011,012,999\', `page_pos` = \'2\', `ribbon` = \'{\\"bg_color\\":\\"#f00\\",\\"txt_color\\":\\"#fff\\",\\"align\\":\\"left\\",\\"content\\":\\"Hello, morning. how are you?\\"}\', `template_id` = \'4\', `data` = (), `active` = 1, `editor` = \'5000\', `deleted` = \'0\', `updated_at` = \'2025-08-24 01:34:14\'
+WHERE `epos_cms`.`id` IN (\'219\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `epos_cms` SET `internal_name` = \'111111\', `type` = \'products_carousel\', `start_date` = \'2025-07-31T15:00:00.000Z\', `end_date` = \'2025-08-31T14:59:59.000Z\', `branches` = \'1,2,3,4,5\', `organization_id` = \'8\', `price_list` = \'001,005,007,008,009,010,011,012,999\', `page_pos` = \'2\', `ribbon` = \'{\\"bg_color\\":\\"#f00\\",\\"txt_color\\":\\"#fff\\",\\"align\\":\\"left\\",\\"content\\":\\"Hello, morning. how are you?\\"}\', `template_id` = \'4\', `data` = (), `active` = 1, `editor` = \'5000\', `deleted` = \'0\', `updated_at` = \'2025-08-24 01:34:14\'
+WHERE `epos_cms`.`id` IN (\'219\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `epos_cms` SET `internal_name` = :internal_name:, `type` = :type:, `start_date` = :start_date:, `end_date` = :end_date:, `branches` = :branches:, `organization_id` = :organization_id:, `price_list` = :price_list:, `page_pos` = :page_pos:, `ribbon` = :ribbon:, `template_id` = :template_id:, `data` = :data:, `active` = :active:, `editor` = :editor:, `deleted` = :deleted:, `updated_at` = :updated_at:
+WHERE `epos_cms`.`id` IN :epos_cms.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 8 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('219', [...])
+ 9 APPPATH\Controllers\CmsController.php(364): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsController->save('219')
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsController))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-08-24 08:06:41 --> mysqli_sql_exception: Unknown column 'data' in 'field list' in E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `epos_cm...', 0)
+#1 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `epos_cm...')
+#2 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `epos_cm...')
+#3 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `epos_cm...', Array, false)
+#4 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+#5 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\BaseModel.php(987): CodeIgniter\Model->doUpdate(Array, Array)
+#6 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\Model.php(807): CodeIgniter\BaseModel->update(Array, Array)
+#7 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\BaseModel.php(711): CodeIgniter\Model->update('15', Array)
+#8 E:\56. moh har\united_wholesale\02.dev\cms\backend\app\Controllers\CmsItemController.php(278): CodeIgniter\BaseModel->save(Array)
+#9 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\CmsItemController->save('15')
+#10 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+#11 E:\56. moh har\united_wholesale\02.dev\cms\backend\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\56. moh har\united_wholesale\02.dev\cms\backend\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2025-08-24 08:06:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'data' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `epos_cms_items` SET `type` = :type:, `cms_id` = :cms_id:, `internal_name` = :internal_name:, `ga_id` = :ga_id:, `link_url` = :link_url:, `prod_codes` = :prod_codes:, `sequence` = :sequence:, `dwell_time` = :dwell_time:, `active` = :active:, `media_web` = :media_web:, `media_mobile` = :media_mobile:, `ribbon` = :ribbon:, `editor` = :editor:, `deleted` = :deleted:, `data` = :data:, `updated_at` = :updated_at:
+WHERE `epos_cms_items`.`id` IN :epos_cms_items.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 5 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('15', [...])
+ 6 APPPATH\Controllers\CmsItemController.php(278): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->save('15')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-24 08:06:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'data' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `epos_cms_items` SET `type` = \'brand\', `cms_id` = \'221\', `internal_name` = \'111111\', `ga_id` = \'aaaaa\', `link_url` = \'https://www.google.com\', `prod_codes` = \'1914775,1914776,1913394,1910594,1196278,1696278\', `sequence` = \'1\', `dwell_time` = \'3\', `active` = 1, `media_web` = \'{\\"type\\":\\"image\\",\\"upload_file\\":\\"web/1755869329.png\\",\\"external_link\\":\\"\\",\\"active_link\\":\\"upload\\"}\', `media_mobile` = \'{\\"type\\":\\"image\\",\\"upload_file\\":\\"mobile/1755869251.png\\",\\"external_link\\":\\"\\",\\"active_link\\":\\"upload\\"}\', `ribbon` = \'{\\"bg_color\\":\\"#f00\\",\\"txt_color\\":\\"#fff\\",\\"align\\":\\"left\\",\\"content\\":\\"\\"}\', `editor` = \'5000\', `deleted` = \'0\', `data` = \'{\\"brand\\":\\"Absolut\\"}\', `updated_at` = \'2025-08-24 08:06:41\'
+WHERE `epos_cms_items`.`id` IN (\'15\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `epos_cms_items` SET `type` = \'brand\', `cms_id` = \'221\', `internal_name` = \'111111\', `ga_id` = \'aaaaa\', `link_url` = \'https://www.google.com\', `prod_codes` = \'1914775,1914776,1913394,1910594,1196278,1696278\', `sequence` = \'1\', `dwell_time` = \'3\', `active` = 1, `media_web` = \'{\\"type\\":\\"image\\",\\"upload_file\\":\\"web/1755869329.png\\",\\"external_link\\":\\"\\",\\"active_link\\":\\"upload\\"}\', `media_mobile` = \'{\\"type\\":\\"image\\",\\"upload_file\\":\\"mobile/1755869251.png\\",\\"external_link\\":\\"\\",\\"active_link\\":\\"upload\\"}\', `ribbon` = \'{\\"bg_color\\":\\"#f00\\",\\"txt_color\\":\\"#fff\\",\\"align\\":\\"left\\",\\"content\\":\\"\\"}\', `editor` = \'5000\', `deleted` = \'0\', `data` = \'{\\"brand\\":\\"Absolut\\"}\', `updated_at` = \'2025-08-24 08:06:41\'
+WHERE `epos_cms_items`.`id` IN (\'15\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `epos_cms_items` SET `type` = :type:, `cms_id` = :cms_id:, `internal_name` = :internal_name:, `ga_id` = :ga_id:, `link_url` = :link_url:, `prod_codes` = :prod_codes:, `sequence` = :sequence:, `dwell_time` = :dwell_time:, `active` = :active:, `media_web` = :media_web:, `media_mobile` = :media_mobile:, `ribbon` = :ribbon:, `editor` = :editor:, `deleted` = :deleted:, `data` = :data:, `updated_at` = :updated_at:
+WHERE `epos_cms_items`.`id` IN :epos_cms_items.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 7 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('15', [...])
+ 8 APPPATH\Controllers\CmsItemController.php(278): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->save('15')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-24 08:06:41 --> [Caused by] mysqli_sql_exception: Unknown column 'data' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `epos_cms_items` SET `type` = \'brand\', `cms_id` = \'221\', `internal_name` = \'111111\', `ga_id` = \'aaaaa\', `link_url` = \'https://www.google.com\', `prod_codes` = \'1914775,1914776,1913394,1910594,1196278,1696278\', `sequence` = \'1\', `dwell_time` = \'3\', `active` = 1, `media_web` = \'{\\"type\\":\\"image\\",\\"upload_file\\":\\"web/1755869329.png\\",\\"external_link\\":\\"\\",\\"active_link\\":\\"upload\\"}\', `media_mobile` = \'{\\"type\\":\\"image\\",\\"upload_file\\":\\"mobile/1755869251.png\\",\\"external_link\\":\\"\\",\\"active_link\\":\\"upload\\"}\', `ribbon` = \'{\\"bg_color\\":\\"#f00\\",\\"txt_color\\":\\"#fff\\",\\"align\\":\\"left\\",\\"content\\":\\"\\"}\', `editor` = \'5000\', `deleted` = \'0\', `data` = \'{\\"brand\\":\\"Absolut\\"}\', `updated_at` = \'2025-08-24 08:06:41\'
+WHERE `epos_cms_items`.`id` IN (\'15\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `epos_cms_items` SET `type` = \'brand\', `cms_id` = \'221\', `internal_name` = \'111111\', `ga_id` = \'aaaaa\', `link_url` = \'https://www.google.com\', `prod_codes` = \'1914775,1914776,1913394,1910594,1196278,1696278\', `sequence` = \'1\', `dwell_time` = \'3\', `active` = 1, `media_web` = \'{\\"type\\":\\"image\\",\\"upload_file\\":\\"web/1755869329.png\\",\\"external_link\\":\\"\\",\\"active_link\\":\\"upload\\"}\', `media_mobile` = \'{\\"type\\":\\"image\\",\\"upload_file\\":\\"mobile/1755869251.png\\",\\"external_link\\":\\"\\",\\"active_link\\":\\"upload\\"}\', `ribbon` = \'{\\"bg_color\\":\\"#f00\\",\\"txt_color\\":\\"#fff\\",\\"align\\":\\"left\\",\\"content\\":\\"\\"}\', `editor` = \'5000\', `deleted` = \'0\', `data` = \'{\\"brand\\":\\"Absolut\\"}\', `updated_at` = \'2025-08-24 08:06:41\'
+WHERE `epos_cms_items`.`id` IN (\'15\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `epos_cms_items` SET `type` = \'brand\', `cms_id` = \'221\', `internal_name` = \'111111\', `ga_id` = \'aaaaa\', `link_url` = \'https://www.google.com\', `prod_codes` = \'1914775,1914776,1913394,1910594,1196278,1696278\', `sequence` = \'1\', `dwell_time` = \'3\', `active` = 1, `media_web` = \'{\\"type\\":\\"image\\",\\"upload_file\\":\\"web/1755869329.png\\",\\"external_link\\":\\"\\",\\"active_link\\":\\"upload\\"}\', `media_mobile` = \'{\\"type\\":\\"image\\",\\"upload_file\\":\\"mobile/1755869251.png\\",\\"external_link\\":\\"\\",\\"active_link\\":\\"upload\\"}\', `ribbon` = \'{\\"bg_color\\":\\"#f00\\",\\"txt_color\\":\\"#fff\\",\\"align\\":\\"left\\",\\"content\\":\\"\\"}\', `editor` = \'5000\', `deleted` = \'0\', `data` = \'{\\"brand\\":\\"Absolut\\"}\', `updated_at` = \'2025-08-24 08:06:41\'
+WHERE `epos_cms_items`.`id` IN (\'15\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `epos_cms_items` SET `type` = :type:, `cms_id` = :cms_id:, `internal_name` = :internal_name:, `ga_id` = :ga_id:, `link_url` = :link_url:, `prod_codes` = :prod_codes:, `sequence` = :sequence:, `dwell_time` = :dwell_time:, `active` = :active:, `media_web` = :media_web:, `media_mobile` = :media_mobile:, `ribbon` = :ribbon:, `editor` = :editor:, `deleted` = :deleted:, `data` = :data:, `updated_at` = :updated_at:
+WHERE `epos_cms_items`.`id` IN :epos_cms_items.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 8 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('15', [...])
+ 9 APPPATH\Controllers\CmsItemController.php(278): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\CmsItemController->save('15')
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CmsItemController))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
